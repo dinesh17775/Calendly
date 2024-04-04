@@ -1,48 +1,48 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
+import "../styles/style.css";
+const NavList = [
+  { id: 1, title: "Individuals", path: "/individuals" },
+  { id: 2, title: "Teams", path: "/teams" },
+  { id: 3, title: "Enterprise", path: "/enterprise" },
+  { id: 4, title: "Product", path: "/product" },
+  { id: 5, title: "Pricing", path: "/pricing" },
+  { id: 6, title: "Resources", path: "/resources" },
+];
 
 function RootLayOut() {
   return (
-    <header className="header">
-      <nav>
-        <div className="app-logo-container">
-          <h2 className="logo">
-            <NavLink to={"/"}>Calendly</NavLink>
-          </h2>
-        </div>
-        <div className="nav-bar">
-          <ul className="nav-list">
-            <li className="list-item">
-              <NavLink to={"/individuals"}>Individuals</NavLink>
-              {/*we can add seperate route when we furthur develop this web page*/}
-            </li>
-            <li className="list-item">
-              <NavLink to={"/teams"}>Teams</NavLink>
-            </li>
-            <li className="list-item">
-              <NavLink to={"/enterprise"}>Enterprise</NavLink>
-            </li>
-            <li className="list-item">
-              <NavLink to={"/product"}>Product</NavLink>
-            </li>
-            <li className="list-item">
-              <NavLink to={"/pricing"}>Pricing</NavLink>
-            </li>
-            <li className="list-item">
-              <NavLink to={"/resources"}>Resources</NavLink>
-            </li>
+    <header className="w-full h-20 border-2 border-solid border-red-500 fixed bg-[#fff]">
+      <nav className="max h-full flex items-center border-2 border-solid border-red-500 mx-auto">
+        <div className="flex items-center mx-auto justify-between w-11/12 h-full border-2 border-solid border-green-500">
+          <div className="w-auto border-2 border-solid border-red-500 h-3/5 items-center">
+            <NavLink to={"/"}>
+              <img
+                className="w-full h-full"
+                src="https://marketing-assets.calendly.com/media/logo.svg"
+                alt="Calendly Logo"
+              />
+            </NavLink>
+          </div>
+          <ul className="w-auto flex border-2 border-solid border-black">
+            {NavList.map((item) => (
+              <li key={item.id} className="mx-5">
+                <NavLink to={item.path} className={"font-medium"}>
+                  {item.title}
+                </NavLink>
+              </li>
+            ))}
           </ul>
-          <ul className="log-in-list">
-            <li className="list-item">
+          <ul className="flex items-center  border-2 border-solid border-red-500">
+            <li className="ml-custom">
               <NavLink to={"/login"}>Login</NavLink>
             </li>
-            <li className="list-item">
-              <NavLink to={"/signup"}>GetStarted</NavLink>
+            <li className="h-10 bg-[#004EBA] text-[#fff] flex items-center px-4 py-2 rounded-md">
+              <NavLink to={"/signup"}>Get Started</NavLink>
             </li>
           </ul>
         </div>
         <Outlet />
-        {/*we use this incase if we develop the web page  with nested routing*/}
       </nav>
     </header>
   );

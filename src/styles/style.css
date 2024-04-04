@@ -1,0 +1,17 @@
+/* global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Override the base font size to 10px */
+
+/* Apply Gilroy font family to the entire document */
+body {
+  font-family: "Gilroy", sans-serif;
+}
+.ml-custom {
+  margin-right: 40px;
+}
+.max {
+  max-width: 1280px;
+}
