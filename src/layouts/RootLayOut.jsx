@@ -14,7 +14,7 @@ function RootLayOut() {
   return (
     <header className="w-full h-20 border-2 border-solid border-red-500 fixed bg-[#fff]">
       <nav className="max h-full flex items-center border-2 border-solid border-red-500 mx-auto">
-        <div className="flex items-center mx-auto justify-between w-11/12 h-full border-2 border-solid border-green-500">
+        <div className="flex items-center mx-6 justify-between w-full  h-full border-2 border-solid border-green-500">
           <div className="w-auto border-2 border-solid border-red-500 h-3/5 items-center">
             <NavLink to={"/"}>
               <img
@@ -25,13 +25,28 @@ function RootLayOut() {
             </NavLink>
           </div>
           <ul className="w-auto flex border-2 border-solid border-black">
-            {NavList.map((item) => (
-              <li key={item.id} className="mx-5">
-                <NavLink to={item.path} className={"font-medium"}>
-                  {item.title}
-                </NavLink>
-              </li>
-            ))}
+            {NavList.map((item) =>
+              item.id === 4 || item.id === 6 ? (
+                <>
+                  <div className="mx-5 flex">
+                    <li key={item.id}>
+                      <NavLink to={item.path} className={"font-medium"}>
+                        {item.title}
+                      </NavLink>
+                    </li>
+                    <button type="submit">click</button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <li key={item.id} className="mx-5">
+                    <NavLink to={item.path} className={"font-medium"}>
+                      {item.title}
+                    </NavLink>
+                  </li>
+                </>
+              )
+            )}
           </ul>
           <ul className="flex items-center  border-2 border-solid border-red-500">
             <li className="ml-custom">
