@@ -17,22 +17,22 @@ export const CategoryList = [
 export const ProductsList = [
   {
     id: 1,
-    name: "zoom",
+    name: "Zoom",
     text: "Zoom is a video conferencing software that allows you to host meetings online.",
   },
   {
     id: 2,
-    name: "typeform",
+    name: "Typeform",
     text: "Typeform is a versatile data collection tool that makes asking questions easy and human!",
   },
   {
     id: 3,
-    name: "webex",
+    name: "Webex",
     text: "Webex is a web conferencing software that combines file sharing with video and audio conferencing.",
   },
   {
     id: 4,
-    name: "slack",
+    name: "Slack",
     text: "Slack is a messaging app for teams that brings all your communication together in one place.",
   },
   {

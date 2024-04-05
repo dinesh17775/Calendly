@@ -13,8 +13,8 @@ const NavList = [
 function RootLayOut() {
   return (
     <header className="w-full h-20 border-2 border-solid border-red-500 fixed bg-[#fff]">
-      <nav className="max h-full flex items-center border-2 border-solid border-red-500 mx-auto">
-        <div className="flex items-center mx-6 justify-between w-full  h-full border-2 border-solid border-green-500">
+      <nav className="max h-full flex items-center border-2 border-solid border-red-500 mx-auto px-5">
+        <div className="flex items-center justify-between w-full  h-full border-2 border-solid border-green-500">
           <div className="w-auto border-2 border-solid border-red-500 h-3/5 items-center">
             <NavLink to={"/"}>
               <img
@@ -34,7 +34,16 @@ function RootLayOut() {
                         {item.title}
                       </NavLink>
                     </li>
-                    <button type="submit">click</button>
+                    {item.id === 4 ? (
+                      <>
+                        <button type="submit">c1</button>
+                      </>
+                    ) : null}
+                    {item.id === 6 ? (
+                      <>
+                        <button type="submit">c2</button>
+                      </>
+                    ) : null}
                   </div>
                 </>
               ) : (

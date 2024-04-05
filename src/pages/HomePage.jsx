@@ -6,7 +6,7 @@ import Booking from "../components/homePageComponents/Booking";
 import Footer from "../components/homePageComponents/footer/Footer";
 function HomePage() {
   return (
-    <main>
+    <main className="w-full h-auto mt-20 border-2 border-solid border-red-500">
       <HomeHeader></HomeHeader>
       <Categories></Categories>
       <Faqs></Faqs>
