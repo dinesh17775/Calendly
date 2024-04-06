@@ -9,8 +9,8 @@ function Faqs() {
   }
   return (
     <div className="w-full h-auto bg-gray-100 mt-9" id="faq">
-      <div className="max border-2 border-solid border-red-500 mx-auto">
-        <div className="w-1/2 flex flex-col mx-auto border-2 border-solid border-red-500">
+      <div className="max border-2 border-solid border-red-500 pb-7 mx-auto">
+        <div className="w-1/2 mb-7 flex flex-col mx-auto border-2 border-solid border-green-500">
           <h1 className=" text-3xl my-6 text-[#093557] font-extrabold text-center">
             Frequently Asked Questions
           </h1>
@@ -20,7 +20,7 @@ function Faqs() {
           </p>
           {Faq.map((item) => {
             return (
-              <div className="mt-6 bg-[#fff] border-2 border-solid border-blue-200 flex">
+              <div className=" w-full mt-6 bg-[#fff] border-2 border-solid border-blue-200 flex justify-end">
                 <div className="w-full border-2 border-solid border-blue-200 flex flex-col">
                   <h2 className=" p-3">{item.query}</h2>
                   <p
@@ -38,8 +38,9 @@ function Faqs() {
                   onClick={() => {
                     return handleReveal(item.id);
                   }}
+                  className="border-2 border-solid border-red-400 flex justify-end p-3"
                 >
-                  reveal
+                  {closeReveal ? "-" : "+"}
                 </button>
               </div>
             );
