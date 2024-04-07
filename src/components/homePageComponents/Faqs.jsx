@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Faq } from "./index2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 function Faqs() {
   const [questionReveal, IsQuestionReveal] = useState(null);
   const [closeReveal, IsCloseReveal] = useState(false);
@@ -10,7 +12,7 @@ function Faqs() {
   return (
     <div className="w-full h-auto bg-gray-100 mt-9" id="faq">
       <div className="max border-2 border-solid border-red-500 pb-7 mx-auto">
-        <div className="w-1/2 mb-7 flex flex-col mx-auto border-2 border-solid border-green-500">
+        <div className="w-1/2 mb-7 px-0 flex flex-col mx-auto border-2 border-solid border-green-500 md:px-4 md:w-full  lg:w-full lg:px-4">
           <h1 className=" text-3xl my-6 text-[#093557] font-extrabold text-center">
             Frequently Asked Questions
           </h1>
@@ -40,7 +42,11 @@ function Faqs() {
                   }}
                   className="border-2 border-solid border-red-400 flex justify-end p-3"
                 >
-                  {closeReveal ? "-" : "+"}
+                  {questionReveal === item.id && closeReveal ? (
+                    <FontAwesomeIcon icon={faMinus} />
+                  ) : (
+                    <FontAwesomeIcon icon={faPlus} />
+                  )}
                 </button>
               </div>
             );

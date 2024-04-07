@@ -8,6 +8,12 @@ module.exports = {
         gilroy: ['"Gilroy"', "sans-serif"],
       },
     },
+    screens: {
+      nm: { min: "980px", max: "1200px" },
+      md: { min: "750px", max: "980px" },
+      lg: { min: "300px", max: "750px" },
+      cm: { min: "300px", max: "540px" },
+    },
   },
   plugins: [],
 };

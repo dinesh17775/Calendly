@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const MiniNavItems = [
   { id: 1, title: "Home", link: "/" },
   { id: 2, title: "Product", link: "#", scrollTo: "products" },
@@ -22,8 +24,8 @@ function HomeHeader() {
     >
       <div className="max border-2 border-solid border-red-500 mx-auto h-auto px-6">
         <div className="w-full flex h-full border-2 border-solid border-green-500">
-          <div className="w-1/2 flex flex-col border-2 border-solid border-red-500">
-            <nav className="home">
+          <div className="w-1/2 flex flex-col border-2 border-solid border-red-500 md:w-full lg:w-full">
+            <nav className="block md:hidden lg:hidden border-2 border-solid border-red-500">
               <ul className="flex">
                 {MiniNavItems.map((item) => {
                   return item.id !== 4 ? (
@@ -125,27 +127,36 @@ function HomeHeader() {
                 </li>*/}
               </ul>
             </nav>
-            <p className="mt-7 text-[#556C87]">APPS & INTEGRATIONS</p>
-            <h1 className="my-7 max-w-screen-md font-extrabold text-[35px] leading-snug pr-20 text-[#093557]">
+            <p className="mt-7 text-[#556C87] md:text-[#093557]">
+              APPS & INTEGRATIONS
+            </p>
+            <h1 className="my-7 max-w-screen-md font-extrabold text-[35px] leading-snug pr-20 text-[#093557] lg:text-3xl lg:font-bold">
               Integrate Calendly, boost productivity
             </h1>
-            <p className="text-[#556c87] text-xs">
+            <p className="text-[#556c87] text-xs md:text-base">
               Smart scheduling automation will change the way you-and your
               tools-work.
             </p>
 
-            <div className="search">
-              <input
-                type="text"
-                name=""
-                id=""
-                className="w-3/5 mt-8 rounded-3xl h-11 p-4 pl-7 shadow-xl text-sm"
-                placeholder="Search for an integration"
-              />
-              <button type="submit">submit</button>
+            <div className=" flex items-center border-2 border-solid border-red-400 w-full h-28 justify-center">
+              <div className=" ml-2 z-20">
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className=" z-10 border-2 border-solid border-red-400 text-base lg:text-xs"
+                ></FontAwesomeIcon>
+              </div>
+              <div className="w-full border-2 border-solid border-red-400 -ml-7">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="w-3/5  rounded-3xl h-11 p-4 pl-8 shadow-xl text-sm lg:text-xs lg:w-3/5 lg:rounded-md"
+                  placeholder="Search for an integration"
+                />
+              </div>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 block  md:hidden lg:hidden">
             <img
               src="https://images.ctfassets.net/k0lk9kiuza3o/7pnp3ZIJHHNMJEYXSCktL/b04ce26084a30501984a14a2058efa36/Integrations-Calendly__1_.png?q=85&fm=webp"
               alt=""

@@ -12,6 +12,10 @@ function HomePage() {
       <Faqs></Faqs>
       <Booking></Booking>
       <Footer></Footer>
+      <div className=" max border-2 border-solid border-red-400 mx-auto px-6 flex items-center justify-between mt-4 md:hidden lg:hidden text-xs">
+        <p className=" text-gray-500">Copyright Calendly 2024</p>
+        <p className=" text-gray-500">Privacy / Terms and Conditions</p>
+      </div>
     </main>
   );
 }
