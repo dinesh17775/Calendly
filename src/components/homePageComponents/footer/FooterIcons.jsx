@@ -18,7 +18,7 @@ const socialIcons = [
 
 function SocialIcons() {
   return (
-    <div className="flex border-2 border-solid border-red-400 w-full py-5 mt-4 gap-6 text-2xl">
+    <div className="flex  w-full py-5 mt-4 gap-6 text-2xl xsd:text-base xsd:pl-3 xsd:gap-0 xsd:justify-between">
       {socialIcons.map((icon) => (
         <FontAwesomeIcon
           key={icon.id}

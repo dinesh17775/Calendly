@@ -13,26 +13,23 @@ function Categories() {
     IsProductsMenu(!ProductsMenu);
   }
   return (
-    <section
-      id="products"
-      className="max  h-auto border-2  border-solid border-red-500 mx-auto"
-    >
-      <div className="w-full h-full px-6 py-8 border-2  border-solid border-green-500 flex gap-7 cm:relative">
+    <section id="products" className="max  h-auto            mx-auto">
+      <div className="w-full h-full px-6 py-8           flex gap-7 cm:relative xsd:px-3 xsd:pt-3">
         <div
-          className={`border-2  border-solid border-green-500 w-1/5 md:w-1/3 lg:w-1/3 ${
+          className={`          w-1/5 md:w-1/3 lg:w-1/3 ${
             ProductsMenu
               ? "cm:block cm:absolute cm:bg-[#fff] cm:w-full cm:pr-12 cm:pt-3 cm:top-10"
-              : "cm:hidden"
+              : "cm:hidden xsd:hidden"
           }`}
         >
           <h2 className="font-extrabold text-xl text-[#093557] cm:hidden">
             Categories
           </h2>
-          <ul className="w-full border-2  border-dotted border-green-500 mt-8">
+          <ul className="w-full            mt-8">
             {CategoryList.map((item) => {
               return (
                 <li
-                  className={`w-full rounded hover:cursor-pointer border-2  border-solid border-green-500 p-4 ${
+                  className={`w-full rounded hover:cursor-pointer           p-4 ${
                     selectedId === item.id
                       ? " text-[#fff] bg-[#006BFF]"
                       : "bg-[#fff]"
@@ -89,11 +86,13 @@ function Categories() {
           </li>*/}
           </ul>
         </div>
-        <div className="flex flex-col w-4/5 border-2 border-solid border-red-500 cm:w-full">
+        <div className="flex flex-col w-4/5      cm:w-full xsd:w-full">
           <div className=" cm:flex cm:justify-between cm:items-center">
-            <p className="view-status">viewing:15 popular</p>
+            <p className="view-status text-base xsd:text-sm xsd:pl-3">
+              viewing:15 popular
+            </p>
             <div
-              className="hidden cm:flex cm:px-4 cm:py-2 cm:items-center border-2 border-solid border-[#006BFF] cm:z-10"
+              className="hidden cm:flex cm:px-4 cm:py-2 cm:items-center   border-[#006BFF] cm:z-10"
               onClick={handleProductsMenu}
             >
               <FontAwesomeIcon
@@ -102,20 +101,22 @@ function Categories() {
               <p className=" cm:ml-2">{ProductsMenu ? "Close" : "Filter"}</p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-7 mt-4 md:grid-cols-2 lg:grid-cols-1">
+          <div className="grid grid-cols-3 gap-7 mt-4 md:grid-cols-2 lg:grid-cols-1 xsd:grid-cols-1">
             {ProductsList.map((item) => (
               <div
                 key={item.id}
-                className={`p-8 hover:cursor-pointer rounded border-2 border-solid border-black flex flex-col  ${
-                  item.id === 6 ? " text-[#fff] bg-[#092640]" : "bg-[#fff]"
-                }`}
+                className={`p-8 hover:cursor-pointer  rounded-lg flex flex-col  ${
+                  item.id === 6
+                    ? " text-[#fff] bg-[#092640]"
+                    : "bg-[#fff] border border-solid border-rgb-212-224-237"
+                } xsd:p-3 shadow-lg`}
               >
-                <div className="w-full h-10 mb-4 border-2 border-solid border-red-300 flex items-center justify-start">
+                <div className="w-full h-10 mb-4       flex items-center justify-start">
                   <img src={item.img_link} alt="" className="w-auto h-full" />
                 </div>
                 <p className=" text-2xl capitalize">{item.name}</p>
                 {item.id === 6 ? (
-                  <div className="flex flex-col w-full h-full justify-between">
+                  <div className="flex flex-col w-full h-full justify-between ">
                     <div className="w-full h-auto mt-4">
                       <p>{item.text1}</p>
                       <p className=" text-gray-400">{item.text2}</p>

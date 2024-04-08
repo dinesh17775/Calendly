@@ -8,7 +8,7 @@ function FootDrop() {
   };
 
   return (
-    <div className="hover:cursor-pointer w-4/5 border-2 border-solid border-gray-300 h-auto p-3 mt-4 flex md:w-2/5 lg:w-2/5">
+    <div className="hover:cursor-pointer w-4/5 border-2 border-solid border-gray-300 h-auto p-3 mt-4 flex md:w-2/5 lg:w-2/5 xsd:w-2/5">
       <select
         value={selectedLanguage}
         onChange={handleChange}
@@ -16,7 +16,10 @@ function FootDrop() {
       >
         {Languages.map((item) => {
           return (
-            <option value={item.title} className="w-full h-full">
+            <option
+              value={item.title}
+              className="w-full h-full text-base xsd:text-xs"
+            >
               {item.title}
             </option>
           );

@@ -11,9 +11,9 @@ function Faqs() {
   }
   return (
     <div className="w-full h-auto bg-gray-100 mt-9" id="faq">
-      <div className="max border-2 border-solid border-red-500 pb-7 mx-auto">
-        <div className="w-1/2 mb-7 px-0 flex flex-col mx-auto border-2 border-solid border-green-500 md:px-4 md:w-full  lg:w-full lg:px-4">
-          <h1 className=" text-3xl my-6 text-[#093557] font-extrabold text-center">
+      <div className="max      pb-7 mx-auto">
+        <div className="w-1/2 mb-7 px-0 flex flex-col mx-auto       md:px-4 md:w-full  lg:w-full lg:px-4 xsd:w-full">
+          <h1 className=" text-3xl my-6 text-[#093557] font-extrabold text-center xsd:text-2xl">
             Frequently Asked Questions
           </h1>
           <p className=" font-light text-[12px] text-center">
@@ -22,25 +22,25 @@ function Faqs() {
           </p>
           {Faq.map((item) => {
             return (
-              <div className=" w-full mt-6 bg-[#fff] border-2 border-solid border-blue-200 flex justify-end">
-                <div className="w-full border-2 border-solid border-blue-200 flex flex-col">
+              <div className=" w-full mt-6 bg-[#fff]      flex justify-end border border-solid border-rgb-212-224-237 rounded-md">
+                <div className="w-full      flex flex-col">
                   <h2 className=" p-3">{item.query}</h2>
-                  <p
-                    className={`p-3 ${
+                  <div
+                    className={`            pl-3 grid overflow-hidden transition-all duration-300 ease-in-out ${
                       questionReveal === item.id && closeReveal
-                        ? "block"
-                        : "hidden"
+                        ? " grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
-                    {item.answer}
-                  </p>
+                    <p className=" overflow-hidden">{item.answer}</p>
+                  </div>
                 </div>
                 <button
                   type="submit"
                   onClick={() => {
                     return handleReveal(item.id);
                   }}
-                  className="border-2 border-solid border-red-400 flex justify-end p-3"
+                  className="     flex justify-end p-3"
                 >
                   {questionReveal === item.id && closeReveal ? (
                     <FontAwesomeIcon icon={faMinus} />

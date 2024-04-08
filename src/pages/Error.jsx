@@ -1,7 +1,7 @@
 import React from "react";
 
 function Error() {
-  return <div>Error 404 Not Found</div>;
+  return <div className="mt-20">Error 404 Not Found</div>;
 }
 
 export default Error;
